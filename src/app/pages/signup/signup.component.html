@@ -3,13 +3,13 @@
 
     <main class="signup-content">
       <span class="signup-header">Signup</span>
-      <!-- signup form -->
+      <!-- auth form -->
 
-      <form class="signup-form" (ngSubmit)="signup($event)" #authform="ngForm">
-        <input ngModel type="email" autofocus placeholder="Email" name="email" class="signup-input" required>
-        <input ngModel type="password" placeholder="Password" name="password" class="signup-input" minlength="6"
+      <form class="signup-form"  #authform="ngForm">
+        <input [(ngModel)]="register.email" name="email" type="email" autofocus placeholder="Email"  class="signup-input" required>
+        <input [(ngModel)]="register.password" name="password" type="password" placeholder="Password"  class="signup-input" minlength="6"
                required>
-        <input type="submit" name="submit" value="Signup" class="signup-btn" [class.btn-disabled]="!authform.form.valid"
+        <input (click)="registerUser()" type="submit" name="submit" value="Signup" class="signup-btn" [class.btn-disabled]="!authform.form.valid"
                [disabled]="!authform.form.valid">
       </form>
       <div class="login-link-wrapper">
@@ -19,11 +19,12 @@
 
     </main>
 
-    <!-- linking to signup -->
+    <!-- linking to auth -->
     <aside class="signup-aside">
       <div class="signup-aside-overlay"></div>
-      <h1 class="signup-welcome-text">Join Minimus Today!</h1>
+      <h1 class="signup-welcome-text">Join Duende Today!</h1>
       <hr class="signup-aside-hr">
     </aside>
   </div>
 </div>
+<app-error [message]="errorMessage"></app-error>
