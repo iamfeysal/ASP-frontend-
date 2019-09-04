@@ -1,32 +1,37 @@
 <div class="main__container">
-  <div class="login-card">
+  <div class="signup-card">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
 
-    <main class="login-content">
-      <span class="login-header">Login</span>
-      <!-- login form -->
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
 
-      <form class="login-form"  #authform="ngForm">
-        <input [(ngModel)]="login.email" type="email" autofocus placeholder="Email" name="email" class="login-input" required>
-        <input [(ngModel)]="login.password" type="password" placeholder="Password" name="password" class="login-input" minlength="6"
-               required>
-        <input (click)="onLogin()" type="submit" name="submit"  class="login-btn" [class.btn-disabled]="!authform.form.valid"
-               [disabled]="!authform.form.valid">
-      </form>
-      <div class="signup-link-wrapper">
-        <span class="signup-notice">Don't have an account?</span>
-        <a class="signup-link" routerLink="/sign-up">Sign up</a>
-      </div>
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput [(ngModel)]="login.email" name="email"  placeholder="email" type="email">
+          <mat-icon matSuffix>email</mat-icon>
 
-    </main>
+        </mat-form-field>
 
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput [(ngModel)]="login.password" name="password" [type]="hide ? 'password' : 'text'" type="password" required>
+          <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button  (click)="onLogin()" color="accent" class="btn-block">Log in</button>
+    </form>
+  </mat-card>
+
+</div>
     <!-- linking to auth -->
-    <aside class="login-aside">
-      <div class="login-aside-overlay"></div>
-      <h1 class="login-welcome-text">Welcome Back!</h1>
-      <hr class="login-aside-hr">
+    <aside class="signup-aside">
+      <div class="signup-aside-overlay"></div>
+      <h1 class="signup-welcome-text">Join Duende Today!</h1>
+      <hr class="signup-aside-hr">
     </aside>
   </div>
 </div>
-
 <app-error [message]="errorMessage"></app-error>
-

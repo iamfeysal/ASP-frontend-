@@ -1,3 +1,19 @@
+html,body{height:100%;margin:0;padding:0;}
+body{background-image:url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);background-position:center;background-size:cover;background-repeat:no-repeat;min-height:100vh;font-family:'Roboto', sans-serif;}
+.app-header{justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:2;box-shadow:0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);}
+.login-wrapper{height:100%;}
+.positronx{text-decoration:none;color:#ffffff;}
+.box{position:relative;top:0;opacity:1;float:left;padding:60px 50px 40px 50px;width:100%;background:#fff;border-radius:10px;transform:scale(1);-webkit-transform:scale(1);-ms-transform:scale(1);z-index:5;max-width:330px;}
+.box.back{transform:scale(.95);-webkit-transform:scale(.95);-ms-transform:scale(.95);top:-20px;opacity:.8;z-index:-1;}
+.box:before{content:"";width:100%;height:30px;border-radius:10px;position:absolute;top:-10px;background:rgba(255, 255, 255, .6);left:0;transform:scale(.95);-webkit-transform:scale(.95);-ms-transform:scale(.95);z-index:-1;}
+.login-wrapper .example-form{min-width:100%;max-width:300px;width:100%;}
+.login-wrapper .example-full-width,.login-wrapper .btn-block{width:100%;}
+.login-wrapper mat-card-header{text-align:center;width:100%;display:block;font-weight:700;}
+.login-wrapper mat-card-header mat-card-title{font-size:30px;margin:0;}
+.login-wrapper .mat-card{padding:40px 70px 50px;}
+.login-wrapper .mat-stroked-button{border:1px solid currentColor;line-height:54px;background:#FFF7FA;}
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix{padding:0.8375em 0;}
+
 .main__container {
   min-height: 90vh;
   width: 90vw;
@@ -7,7 +23,7 @@
   overflow: hidden;
 }
 
-.login-card {
+.signup-card {
   position: relative;
   display: flex;
   background-color: #ffffff;
@@ -18,7 +34,7 @@
   animation: fadein 1s ease-in-out;
 }
 
-.login-header {
+.signup-header {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 2rem;
@@ -28,7 +44,17 @@
   animation: fadein 1.75s ease-in-out;
 }
 
-.login-content {
+/*.auth-header {*/
+/*  position: absolute;*/
+/*  top: 5rem;*/
+/*  font-size: 2.5rem;*/
+/*  color: #0c1066;*/
+/*  letter-spacing: 0.2rem;*/
+/*  font-weight: bold;*/
+/*  animation: slidedown 1.5s ease-in-out;*/
+/*}*/
+
+.signup-content {
   flex: 2 2;
   display: flex;
   flex-flow: column;
@@ -38,7 +64,7 @@
   min-height: 100%;
 }
 
-.login-form {
+.signup-form {
   display: flex;
   flex-flow: column;
   width: 80%;
@@ -46,7 +72,7 @@
   animation: slidedown 2s ease-in-out;
 }
 
-.login-aside {
+.signup-aside {
   animation: fadein 2.25s ease-in-out;
   flex: 3 3;
   display: flex;
@@ -59,7 +85,7 @@
   position: relative;
 }
 
-.login-aside-overlay {
+.signup-aside-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,7 +95,7 @@
   border-radius: 0 10px 10px 0;
 }
 
-.login-aside-hr {
+.signup-aside-hr {
   height: 0.5rem;
   width: 8rem;
   border: none;
@@ -81,7 +107,7 @@
   animation: slideright 4s ease-out;
 }
 
-.login-welcome-text {
+.signup-welcome-text {
   color: white;
   letter-spacing: 0.03rem;
   margin: 0 0 2rem 3rem;
@@ -91,7 +117,7 @@
   animation: slideright 2s ease-out;
 }
 
-.login-input {
+.signup-input {
   margin: 1rem 0;
   padding: 1.5rem;
   border-radius: 2rem;
@@ -102,7 +128,7 @@
 }
 
 
-.login-btn {
+.signup-btn {
   background-color: #00ff9b;
   padding: 1rem;
   border-radius: 2rem;
@@ -116,11 +142,11 @@
   box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
 }
 
-.login-btn:hover {
+.signup-btn:hover {
   background: linear-gradient(to right, #03a9f4, #00ff9b);
 }
 
-.login-input::placeholder {
+.signup-input::placeholder {
   color: #39437a;
   font-size: 0.9rem;
 }
@@ -134,22 +160,29 @@
 }
 
 
-.signup-link-wrapper {
+.login-link-wrapper {
   margin-top: 3rem;
   animation: slideup 1s ease-in-out;
 }
 
-.signup-link {
+.login-link {
   text-transform: uppercase;
   margin-top: 1rem;
   text-decoration: none;
   color: #ff3a82;
   margin-left: 1rem;
 }
+.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+  color: #3f51b5;
+}
+.login-wrapper[_ngcontent-serverApp-c4] mat-card-header[_ngcontent-serverApp-c4]{
+  color: #3f51b5;
+  font-size: 30px;
+  margin: 0;
 
-
+}
 @media screen and (max-width: 959px) {
-  .login-aside {
+  .signup-aside {
     display: none;
   }
 }

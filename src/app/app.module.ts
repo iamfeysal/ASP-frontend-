@@ -1,22 +1,34 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
+/* Routing */
 import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
 
-import {environment} from '../environments/environment';
-import {FormsModule} from '@angular/forms';
+/* Components */
+import {AppComponent} from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ErrorComponent } from './ui/error/error.component';
-// tslint:disable-next-line:import-spacing
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MainNavComponent } from './pages/main-nav/main-nav.component';
+
+/* FormsModule */
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+/* Angular material */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// tslint:disable-next-line:import-spacing
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
+
+/* Angular Flex Layout */
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -27,23 +39,31 @@ import { FooterComponent } from './shared/footer/footer.component';
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    LayoutModule,
+    AngularMaterialModule,
+    FlexLayoutModule
   ],
   providers: [
     CookieService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
+
 export class AppModule {
 }

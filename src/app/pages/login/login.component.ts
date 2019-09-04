@@ -13,7 +13,8 @@ interface TokenObj {
 })
 export class LoginComponent implements OnInit {
   login;
-  errorMessage = '';
+  errorMessage: [any, any];
+  hide = true;
   constructor(private loginService: LoginService, public router: Router, private cookieService: CookieService) { }
 
   ngOnInit() {
@@ -32,12 +33,13 @@ export class LoginComponent implements OnInit {
     this.loginService.onLogin(this.login).subscribe(
       ( response: TokenObj) => {
         console.log(response);
-        // this.router.navigateByUrl('home');
+        this.router.navigateByUrl('home');
         alert('User' + this.login.email + 'has logged ');
         this.cookieService.set('mr-token', response.key);
       },
       (err) => {
-        this.errorMessage = (err.statusText);
+        // tslint:disable-next-line:no-unused-expression
+        this.errorMessage = [err.error.email, err.error.non_field_errors];
         console.log(err);
         setTimeout(() => this.errorMessage = '', 2000);
       });

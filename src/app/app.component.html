@@ -1,35 +1,21 @@
 <!-- Slide Menu-->
-<aside class="side-menu__container" [ngClass]="{'side-menu__container-active': showMenu}" (click)="toggleMenu()">
-  <nav class="slide-menu" [ngClass]="{'slide-menu-active': showMenu, 'slide-menu-active-dark': darkModeActive}"
-       (click)="$event.stopImmediatePropagation();">
-    <section class="menu-header" [ngClass]="{'menu-header-dark': darkModeActive}">
-    </section>
-    <section class="menu-body">
-    </section>
-    <section class="menu-footer">
-
-    </section>
-  </nav>
-</aside>
-
-<main class="root__container" [ngClass]="{'root__container-dark': darkModeActive}">
-  <header [ngClass]="{'main__header-dark': darkModeActive}" class="main__header" *ngIf="loggedIn | async">
-
-    <div class="left__section">
-    </div>
-
-
-
-  </header>
 
   <!-- Main Content -->
+  <!-- Toolbar -->
+<!--  <mat-toolbar color="primary" class="app-header">-->
+<!--    <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>-->
+<!--    <span class="nav-tool-items">-->
+<!--    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>-->
+<!--    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Premuim</a>-->
+<!--  </span>-->
+<!--  </mat-toolbar>-->
+<app-main-nav></app-main-nav>
 
   <div class="main-container__bg">
-    <app-header></app-header>
+<!--    <app-main-nav></app-main-nav>-->
+
+    <!--    <app-header></app-header>-->
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+<!--    <app-footer></app-footer>-->
 
   </div>
-
-
-</main>

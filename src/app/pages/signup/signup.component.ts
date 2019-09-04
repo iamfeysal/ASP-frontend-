@@ -9,26 +9,29 @@ import {Router} from '@angular/router';
   providers: [SignupService]
 })
 export class SignupComponent implements OnInit {
+  Roles: any = ['Player', 'Coach', 'Fan'];
   register;
   errorMessage = '';
+  hide = true;
+
   constructor(private userService: SignupService, public router: Router) { }
 
   ngOnInit() {
     this.register = {
       email: '',
-      password: ''
+      password: '',
+      roles: this.Roles
     };
   }
   registerUser() {
     this.userService.registerUser(this.register).subscribe(
       response => {
         alert('User' + this.register.email + 'has been created');
-        this.router.navigateByUrl('login');
+        this.register.reset();
+        // this.router.navigateByUrl('login');
       },
       (err) => {
         this.errorMessage = (err.error.email);
         setTimeout(() => this.errorMessage = '', 2000);
       });
-  }
-
-}
+  }}
