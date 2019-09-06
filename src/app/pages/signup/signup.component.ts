@@ -26,9 +26,9 @@ export class SignupComponent implements OnInit {
   registerUser() {
     this.userService.registerUser(this.register).subscribe(
       response => {
+        this.router.navigateByUrl('login');
         alert('User' + this.register.email + 'has been created');
         this.register.reset();
-        // this.router.navigateByUrl('login');
       },
       (err) => {
         this.errorMessage = (err.error.email);

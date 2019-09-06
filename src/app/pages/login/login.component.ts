@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     };
-    const mrToken = this.cookieService.get('mr-token');
-    console.log(mrToken);
-    if (mrToken) {
+    const Token = this.cookieService.get('token');
+    console.log(Token);
+    if (Token) {
       this.router.navigate(['home']);
     }
   }
@@ -35,11 +35,11 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.router.navigateByUrl('home');
         alert('User' + this.login.email + 'has logged ');
-        this.cookieService.set('mr-token', response.key);
+        this.cookieService.set('token', response.key);
       },
       (err) => {
         // tslint:disable-next-line:no-unused-expression
-        this.errorMessage = [err.error.email, err.error.non_field_errors];
+        this.errorMessage = [err.error.email, err.error.non_field_errors, err.error.detail];
         console.log(err);
         setTimeout(() => this.errorMessage = '', 2000);
       });

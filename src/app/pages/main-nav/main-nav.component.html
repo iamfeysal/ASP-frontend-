@@ -1,10 +1,25 @@
-<mat-toolbar color="primary">
+<!--<mat-toolbar color="primary">-->
+<!--  <span>-->
+<!--    <img src="" class="angular-logo">-->
+<!--  </span>-->
+<!--  <span class="fill-remaining-space"></span>-->
+<!--  <button mat-button class="Header__actionButton Webapp__button Webapp__button&#45;&#45;orange">Be Premium</button><hr>-->
+<!--  <button mat-button class="Header__actionButton Webapp__button Webapp__button&#45;&#45;yellow" >About Us</button>-->
+<!--  <button mat-button routerLink="login">Login</button>-->
+<!--  <mat-toolbar color="primary" *ngIf="onLogin$ | async as onLogin">-->
+<!--    &lt;!&ndash; more HTML template code &ndash;&gt;-->
+<!--    <button mat-button (click)="onLogout()" *ngIf="onLogin">Logout</button>-->
+<!--  </mat-toolbar>-->
+<!--&lt;!&ndash;  <button mat-button (click)="onLogout()">Logout</button>&ndash;&gt;-->
+<!--</mat-toolbar>-->
+
+<mat-toolbar color="primary"  >
+
   <span>
-    <img src="" class="angular-logo">
   </span>
   <span class="fill-remaining-space"></span>
-  <button mat-button class="Header__actionButton Webapp__button Webapp__button--orange">Be Premium</button><hr>
-  <button mat-button class="Header__actionButton Webapp__button Webapp__button--yellow" >About Us</button>
+  <button mat-button>Menu Option 01</button>
+  <button mat-button>Menu Option 02</button>
   <button mat-button routerLink="login">Login</button>
-<!--  <button mat-button (click)="onLogout()">Logout</button>-->
+  <button mat-button (click)="onLogout()">Logout</button>
 </mat-toolbar>

@@ -9,16 +9,23 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginService {
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    // Authorization: 'Token 93657868a4a6d43346eda70e9c182bd45d5f8b63'
 
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   onLogin(userData): Observable<any> {
     const body = JSON.stringify(userData);
     // console.log(userData);
     return this.http.post('http://127.0.0.1:8000/authentication/login',   body,
-      {headers: this.headers});
+      {headers: this.getAuthHeaders()});
+  }
+  getAuthHeaders() {
+    const Token = this.cookieService.get('token');
+    console.log(Token);
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      // Authorization: 'Token ${mrToken}'
+    });
   }
 }
