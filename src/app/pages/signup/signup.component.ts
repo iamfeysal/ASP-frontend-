@@ -31,7 +31,10 @@ export class SignupComponent implements OnInit {
         this.register.reset();
       },
       (err) => {
-        this.errorMessage = (err.error.email);
+        this.errorMessage = err;
         setTimeout(() => this.errorMessage = '', 2000);
+      // (err) => {
+      //   this.errorMessage = (err.error.email);
+      //   setTimeout(() => this.errorMessage = '', 2000);
       });
   }}

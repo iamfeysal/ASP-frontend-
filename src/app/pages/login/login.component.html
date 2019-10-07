@@ -1,39 +1,73 @@
+<!--<div class="main__container">-->
+<!--  <div class="signup-card">-->
+<!--<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">-->
+
+<!--  <mat-card class="box">-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title>Log in</mat-card-title>-->
+<!--    </mat-card-header>-->
+
+<!--    <form class="example-form">-->
+<!--      <mat-card-content>-->
+<!--        <mat-form-field class="example-full-width" appearance="outline">-->
+<!--          <input matInput [(ngModel)]="login.email" name="email"  placeholder="email" type="email">-->
+<!--          <mat-icon matSuffix>email</mat-icon>-->
+
+<!--        </mat-form-field>-->
+
+<!--        <mat-form-field class="example-full-width" appearance="outline">-->
+<!--          <input matInput [(ngModel)]="login.password" name="password" [type]="hide ? 'password' : 'text'" type="password" required>-->
+<!--          <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+<!--            {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--        </mat-form-field>-->
+<!--      <button mat-stroked-button  (click)="onLogin()" color="accent" class="btn-block">Log in</button>-->
+<!--      </mat-card-content>-->
+<!--    </form>-->
+
+<!--    <span>Dont have an account? Register here.</span>-->
+<!--  </mat-card>-->
+
+
+<!--</div>-->
+<!--    &lt;!&ndash; linking to auth &ndash;&gt;-->
+<!--    <aside class="signup-aside">-->
+<!--      <div class="signup-aside-overlay"></div>-->
+<!--      <h1 class="signup-welcome-text">Join Duende Today!</h1>-->
+<!--      <hr class="signup-aside-hr">-->
+<!--    </aside>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<app-error [message]="errorMessage"></app-error>-->
+
 <div class="main__container">
-  <div class="signup-card">
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <div class="login-card">
 
-  <mat-card class="box">
-    <mat-card-header>
-      <mat-card-title>Log in</mat-card-title>
-    </mat-card-header>
+    <main class="login-content">
+      <span class="login-header">Login</span>
+      <!-- login form -->
 
-    <form class="example-form">
-      <mat-card-content>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <input matInput [(ngModel)]="login.email" name="email"  placeholder="email" type="email">
-          <mat-icon matSuffix>email</mat-icon>
+      <form class="login-form" (ngSubmit)="login($event)" #authform="ngForm">
+        <input [(ngModel)]="login.email" type="email" autofocus placeholder="Email" name="email" class="login-input" required>
+        <input [(ngModel)]="login.password" type="password" placeholder="Password" name="password" class="login-input" minlength="6"
+               required>
+        <input type="submit" (click)="onLogin()" name="submit" value="Login" class="login-btn" [class.btn-disabled]="!authform.form.valid"
+               [disabled]="!authform.form.valid">
+      </form>
+      <div class="signup-link-wrapper">
+        <span class="signup-notice">Don't have an account?</span>
+        <a class="signup-link" routerLink="/register">Sign up</a>
+      </div>
 
-        </mat-form-field>
+    </main>
 
-        <mat-form-field class="example-full-width" appearance="outline">
-          <input matInput [(ngModel)]="login.password" name="password" [type]="hide ? 'password' : 'text'" type="password" required>
-          <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </mat-form-field>
-      </mat-card-content>
-      <button mat-stroked-button  (click)="onLogin()" color="accent" class="btn-block">Log in</button>
-    </form>
-    <span>Dont have an account? Register here.</span>
-  </mat-card>
-
-
-</div>
-    <!-- linking to auth -->
-    <aside class="signup-aside">
-      <div class="signup-aside-overlay"></div>
-      <h1 class="signup-welcome-text">Join Duende Today!</h1>
-      <hr class="signup-aside-hr">
+    <!-- linking to signup -->
+    <aside class="login-aside">
+      <div class="login-aside-overlay"></div>
+      <h1 class="login-welcome-text">Welcome Back!</h1>
+      <hr class="login-aside-hr">
     </aside>
   </div>
 </div>
+
+
 <app-error [message]="errorMessage"></app-error>
