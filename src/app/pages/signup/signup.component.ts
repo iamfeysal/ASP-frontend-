@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class SignupComponent implements OnInit {
   Roles: any = ['Player', 'Coach', 'Fan'];
   register;
-  errorMessage = '';
+  errorMessage: any[] = '';
   hide = true;
 
   constructor(private userService: SignupService, public router: Router) { }
@@ -31,10 +31,10 @@ export class SignupComponent implements OnInit {
         this.register.reset();
       },
       (err) => {
-        this.errorMessage = err;
+        this.errorMessage = [err.error.email, err.error.non_field_errors, err.error.detail];
         setTimeout(() => this.errorMessage = '', 2000);
+      });
       // (err) => {
       //   this.errorMessage = (err.error.email);
       //   setTimeout(() => this.errorMessage = '', 2000);
-      });
   }}

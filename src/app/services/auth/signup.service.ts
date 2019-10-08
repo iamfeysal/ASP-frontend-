@@ -10,6 +10,6 @@ export class SignupService {
   constructor(private http: HttpClient) { }
 
   registerUser(userData): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/users/createuser/', userData);
+    return this.http.post('http://127.0.0.1:8000/authentication/createuser/', userData);
   }
 }

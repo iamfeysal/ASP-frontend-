@@ -31,51 +31,84 @@
 
 
 <!--THIS ONE-->
-<div class="main__container">
-  <div class="signup-card">
-    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-      <mat-card class="box">
-        <mat-card-header>
-          <mat-card-title>Register</mat-card-title>
-        </mat-card-header>
+<!--<div class="main__container">-->
+<!--  <div class="signup-card">-->
+<!--    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">-->
+<!--      <mat-card class="box">-->
+<!--        <mat-card-header>-->
+<!--          <mat-card-title>Register</mat-card-title>-->
+<!--        </mat-card-header>-->
 
-        <form class="example-form" #myForm="ngForm" (submit)="registerUser(); myForm.reset()">
+<!--        <form class="example-form" #myForm="ngForm" (submit)="registerUser(); myForm.reset()">-->
 
-          <mat-card-content>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input matInput [(ngModel)]="register.email" name="email"  type="email" placeholder="Email" required>
-              <mat-icon matSuffix>email</mat-icon>
+<!--          <mat-card-content>-->
+<!--            <mat-form-field class="example-full-width" appearance="outline">-->
+<!--              <input matInput [(ngModel)]="register.email" name="email"  type="email" placeholder="Email" required>-->
+<!--              <mat-icon matSuffix>email</mat-icon>-->
 
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input matInput [(ngModel)]="register.password" name="password" [type]="hide ? 'password' : 'text'" type="password" required>
-              <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </mat-form-field>
-
-<!--            <mat-form-field class="example-full-width">-->
-<!--              <mat-label>Choose a role...</mat-label>-->
-<!--              <mat-select [(value)]="selected">-->
-<!--                <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}-->
-<!--                </mat-option>-->
-<!--              </mat-select>-->
 <!--            </mat-form-field>-->
 
-          </mat-card-content>
+<!--            <mat-form-field class="example-full-width" appearance="outline">-->
+<!--              <input matInput [(ngModel)]="register.password" name="password" [type]="hide ? 'password' : 'text'" type="password" required>-->
+<!--              <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+<!--                {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--            </mat-form-field>-->
 
-          <button mat-stroked-button color="accent"  (click)="registerUser()" class="btn-block">Register</button>
+<!--&lt;!&ndash;            <mat-form-field class="example-full-width">&ndash;&gt;-->
+<!--&lt;!&ndash;              <mat-label>Choose a role...</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;              <mat-select [(value)]="selected">&ndash;&gt;-->
+<!--&lt;!&ndash;                <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}&ndash;&gt;-->
+<!--&lt;!&ndash;                </mat-option>&ndash;&gt;-->
+<!--&lt;!&ndash;              </mat-select>&ndash;&gt;-->
+<!--&lt;!&ndash;            </mat-form-field>&ndash;&gt;-->
 
-        </form>
-      </mat-card>
-    </div>
+<!--          </mat-card-content>-->
 
-    <!-- linking to auth -->
+<!--          <button mat-stroked-button color="accent"  (click)="registerUser()" class="btn-block">Register</button>-->
+
+<!--        </form>-->
+<!--      </mat-card>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; linking to auth &ndash;&gt;-->
+<!--    <aside class="signup-aside">-->
+<!--      <div class="signup-aside-overlay"></div>-->
+<!--      <h1 class="signup-welcome-text">Join Duende Today!</h1>-->
+<!--      <hr class="signup-aside-hr">-->
+<!--    </aside>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<app-error [message]="errorMessage"></app-error>-->
+
+
+<div class="main__container">
+  <div class="signup-card">
+
+    <main class="signup-content">
+      <span class="signup-header">Signup</span>
+      <!-- signup form -->
+
+      <form class="signup-form" (ngSubmit)="signup($event)" #authform="ngForm">
+        <input [(ngModel)]="register.email" type="email" autofocus placeholder="Email" name="email" class="signup-input" required>
+        <input [(ngModel)]="register.password" type="password" placeholder="Password" name="password" class="signup-input" minlength="6"
+               required>
+        <input type="submit" (click)="registerUser()" name="submit" value="Signup" class="signup-btn" [class.btn-disabled]="!authform.form.valid"
+               [disabled]="!authform.form.valid">
+      </form>
+      <div class="login-link-wrapper">
+        <span class="login-notice">Already Have an account?</span>
+        <a class="login-link" routerLink="/login">login</a>
+      </div>
+
+    </main>
+
+    <!-- linking to signup -->
     <aside class="signup-aside">
       <div class="signup-aside-overlay"></div>
-      <h1 class="signup-welcome-text">Join Duende Today!</h1>
-      <hr class="signup-aside-hr">
+        <h1 class="signup-welcome-text">Join Duende Today!</h1>
+        <hr class="signup-aside-hr">
     </aside>
   </div>
 </div>
+
 <app-error [message]="errorMessage"></app-error>
