@@ -1,3 +1,7 @@
+.logo {
+  height: 40px;
+}
+
 nav {
   background-color: #fff;
   box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.1);
@@ -11,7 +15,7 @@ nav .nav-link {
   padding: 10px 10px;
   position: relative;
   z-index: 0;
-  color: #000;
+  color: #3c4043;
   cursor: pointer;
 }
 
@@ -19,21 +23,60 @@ nav .nav-link:after {
   position: absolute;
   left: 10px;
   bottom: 0px;
-  width: 30px;
-  height: 4px;
-  background: #000;
+  width: 40px;
+  height: 5px;
+  background: #9aa289;
   content: "";
   opacity: 0;
   border-radius: 20px;
   transform: translateX(-10px);
   transition: all 0.3s;
 }
+
 nav .nav-link:hover:after {
   opacity: 1;
   transform: translateX(0px);
 }
 
-#award_symbol{
+nav .navbar-brand {
+  display: inline-block;
+}
+
+nav .btn {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+nav .navbar-toggler img {
+  width: 30px;
+  height: 30px;
+  visibility: hidden;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo span {
+  color: green;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.btn-outline-success {
+  color: #9aa289;
+  font-weight: 600;
+  border: 2px solid #9aa289;
+  border-radius: 0px;
+}
+
+.btn-outline-success:hover {
+  background-color: #9aa289;
+  color:#fff;
+}
+
+/* #award_symbol{
   width: 50px;
   height: 50px;
 }
@@ -42,4 +85,9 @@ nav .nav-link:hover:after {
   height: 26px;
   position: relative;
   left: -38px;
+} */
+@media only screen and (max-width: 768px) {
+  nav .navbar-toggler img {
+    visibility: visible;
+  }
 }

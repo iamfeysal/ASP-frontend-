@@ -1,58 +1,59 @@
-<nav class="navbar navbar-expand-lg fixed-top pr-5">
+<nav class="navbar navbar-expand-lg fixed-top pr-1">
   <a class="navbar-brand" routerLink="/">
     <div class="logo container border-right">
-      <img id="award_symbol" src="assets/images/award-symbol.svg" alt="">
-      <img id="cow" src="assets/images/beef.svg" alt="">
+      <img class="mr-3" src="assets/images/kamsoslogo.png">
+      <span>Kamsos</span>
     </div>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+  </a>
+  <span class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="assets/images/menu-button.svg">
+  </span>
+
+  <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarSupportedContent">
     <ul  class="navbar-nav">
-      <li class="nav-item active mx-2">
-        <a class="nav-link" routerLink="/">x
+      <li class="nav-item active mx-1">
+        <a class="nav-link" routerLink="/">
           Home
         </a>
       </li>
 
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
-          Features
+      <li class="nav-item mx-1">
+        <a class="nav-link" routerLink="/resources" routerLinkActive="active">
+          Resources
         </a>
       </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
+      <li class="nav-item mx-1">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">
           About
         </a>
       </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
+      <li class="nav-item mx-1">
+        <a class="nav-link" routerLink="/contact" Active="active">
           Contact Us
         </a>
       </li>
-      <!-- <li class="nav-item mx-2">
+      <!-- <li class="nav-item mx-1">
         <a class="nav-link" routerLinkActive="active">
           Learn
         </a>
       </li> -->
-
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
-          Download
-        </a>
-      </li>
-      <li class="nav-item mx-2">
+      <li class="nav-item mx-1">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">
-          Sign in
+          Log in
         </a>
       </li>
 
-      <li class="nav-item mx-2">
+      <!-- <li class="nav-item mx-1">
         <a class="nav-link" routerLink="/register" routerLinkActive="active">
           Sign up
         </a>
+      </li> -->
+
+      <li class="nav-item mx-1">
+        <button  routerLinkActive="active" class="btn btn-outline-success">
+          Download
+        </button>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,32 +71,31 @@
       </li>-->
     </ul>
 
-    <ul  class="navbar-nav">
-      <li class="nav-item active mx-4">
-        <a class="nav-link" routerLink="/">
+    <ul class="navbar-nav">
+      <li class="nav-item mx-1">
+        <a class="nav-link" routerLink="/" routerLinkActive="active">
           Home
         </a>
       </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
-          Features
+
+      <li class="nav-item mx-1">
+        <a class="nav-link" routerLink="/vets" routerLinkActive="active">
+          Vets
         </a>
       </li>
-      <li class="nav-item mx-2">
+
+      <li class="nav-item mx-1">
         <a class="nav-link" routerLinkActive="active">
-          Contact
+          Agrovet
         </a>
       </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
-          Learn
+
+      <li class="nav-item mx-1">
+        <a class="nav-link" (click)="logout()" routerLinkActive="active">
+          Logout
         </a>
       </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" routerLinkActive="active">
-          About
-        </a>
-      </li>
+
     </ul>
   </div>
 </nav>

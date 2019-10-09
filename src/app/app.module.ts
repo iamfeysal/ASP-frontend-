@@ -7,15 +7,14 @@ import {AppRoutingModule} from './app-routing.module';
 
 /* Components */
 import {AppComponent} from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { HomeComponent } from './main/home/home.component';
+import { LoginComponent } from './main/auth/login/login.component';
+import { SignupComponent } from './main/auth/signup/signup.component';
 import { ErrorComponent } from './ui/error/error.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MainNavComponent } from './pages/main-nav/main-nav.component';
-
+import { MainNavComponent } from './main/main-nav/main-nav.component';
 /* FormsModule */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -28,6 +27,12 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
 
 /* Angular Flex Layout */
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderAdministratorComponent } from './shared/header-administrator/header-administrator.component';
+import { LayoutAdminComponent } from './shared/layout-admin/layout-admin.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutComponent } from './shared/layout/layout.component';
 
 
 @NgModule({
@@ -40,6 +45,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeaderComponent,
     FooterComponent,
     MainNavComponent,
+    HeaderAdministratorComponent,
+    LayoutAdminComponent,
+    LayoutComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -55,7 +64,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     LayoutModule,
     AngularMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [
     CookieService

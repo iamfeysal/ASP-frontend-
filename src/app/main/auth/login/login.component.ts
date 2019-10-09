@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import {LoginService} from '../../services/auth/login.service';
+import {LoginService} from '../../../API Services/auth/login.service';
 
 interface TokenObj {
   key: string;
