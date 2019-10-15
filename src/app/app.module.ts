@@ -1,9 +1,12 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 /* Routing */
 import {AppRoutingModule} from './app-routing.module';
+
+
 
 /* Components */
 import {AppComponent} from './app.component';
@@ -19,11 +22,9 @@ import { MainNavComponent } from './main/main-nav/main-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* Angular material */
+import { MaterialModule } from './material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularMaterialModule } from './angular-material.module';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// tslint:disable-next-line:import-spacing
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
+// import { AngularMaterialModule } from './angular-material.module';
 
 /* Angular Flex Layout */
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -57,17 +58,9 @@ import { LayoutComponent } from './shared/layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
+    MaterialModule,
     LayoutModule,
-    AngularMaterialModule,
-    FlexLayoutModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule
+    FlexLayoutModule
   ],
   providers: [
     CookieService

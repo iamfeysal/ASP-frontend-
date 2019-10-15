@@ -1,9 +1,5 @@
-.logo {
-  height: 40px;
-}
-
 nav {
-  background-color: #fff;
+  background-color: #1E1838;
   box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -15,7 +11,7 @@ nav .nav-link {
   padding: 10px 10px;
   position: relative;
   z-index: 0;
-  color: #3c4043;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -25,7 +21,7 @@ nav .nav-link:after {
   bottom: 0px;
   width: 40px;
   height: 5px;
-  background: #9aa289;
+  background: #24D3FA;
   content: "";
   opacity: 0;
   border-radius: 20px;
@@ -65,17 +61,28 @@ nav .navbar-toggler img {
 }
 
 .btn-outline-success {
-  color: #9aa289;
+  color: #C183F9;
   font-weight: 600;
-  border: 2px solid #9aa289;
-  border-radius: 0px;
+  border: 2px solid #C183F9;
+  border-radius: 7px;
 }
 
 .btn-outline-success:hover {
-  background-color: #9aa289;
+  background-color: #C183F9;
   color:#fff;
 }
 
+.btn-outline-success2 {
+  color: #24D3FA;
+  font-weight: 600;
+  border: 2px solid #24D3FA;
+  border-radius: 7px;
+}
+
+.btn-outline-success2:hover {
+  background-color: #24D3FA;
+  color:#fff;
+}
 /* #award_symbol{
   width: 50px;
   height: 50px;
