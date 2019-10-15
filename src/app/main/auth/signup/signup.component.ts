@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
       },
       (err) => {
         this.errorMessage = [err.error.email, err.error.non_field_errors, err.error.detail];
-        setTimeout(() => this.errorMessage = "", 2000);
+        setTimeout(() => this.errorMessage = " ", 2000);
       });
       // (err) => {
       //   this.errorMessage = (err.error.email);
