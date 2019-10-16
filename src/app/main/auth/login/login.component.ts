@@ -13,7 +13,7 @@ interface TokenObj {
 })
 export class LoginComponent implements OnInit {
   login;
-  errorMessage: any[];
+  errorMessage: string;
   hide = true;
   constructor(private loginService: LoginService, public router: Router, private cookieService: CookieService) { }
 
