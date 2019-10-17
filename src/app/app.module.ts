@@ -16,7 +16,6 @@ import { ErrorComponent } from './ui/error/error.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MainNavComponent } from './main/main-nav/main-nav.component';
-import { LayoutComponent } from './shared/layout/layout.component';
 import {DashboardComponent} from './main/dashboard/dashboard.component';
 import { LandingComponent } from './shared/landing/landing.component';
 
@@ -44,7 +43,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeaderComponent,
     FooterComponent,
     MainNavComponent,
-    LayoutComponent,
     DashboardComponent,
     LandingComponent,
 
