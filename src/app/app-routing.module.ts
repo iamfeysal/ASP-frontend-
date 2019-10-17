@@ -2,10 +2,11 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './main/auth/login/login.component';
 import {SignupComponent} from './main/auth/signup/signup.component';
-import {LayoutComponent} from './shared/layout/layout.component';
+import {LandingComponent} from './shared/landing/landing.component';
+
 
 const routes: Routes = [
-  {path: 'home', component: LayoutComponent,
+  {path: 'home', component: LandingComponent,
     // children: [
     //   {
     //     path: '',
